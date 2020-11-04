@@ -4,11 +4,11 @@ secure react -> express api with auth0
 
 
 <h2>Points of interest</h2>
-
 <ul>
 <li>based on <a href="https://auth0.com/blog/complete-guide-to-react-user-authentication/">this</a></li>
 </ul>
 
 <h2>react readme</h2>
+<a href="https://github.com/NathanKr/react-exprerss-auth0/blob/main/auth0-react-sample/README.md">here</a>
 
 
