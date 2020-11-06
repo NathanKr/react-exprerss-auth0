@@ -19,11 +19,15 @@ const messagesRouter = express.Router();
 // GET messages/
 
 messagesRouter.get("/public-message", (req, res) => {
+  console.log(`${req.url} is accessed. token is NOT required`);
+
   const message = getPublicMessage();
   res.status(200).send(message);
 });
 
 messagesRouter.get("/protected-message", checkJwt, (req, res) => {
+  console.log(`${req.url} is accessed. token is required`);
+
   const message = getProtectedMessage();
   res.status(200).send(message);
 });

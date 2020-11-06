@@ -20,7 +20,9 @@ const apiRouter = express.Router();
  *  App Configuration
  */
 
-app.use(helmet());
+app.use(helmet()); // --- improved security
+
+// --- following may be removed on production - todo check this
 app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
 
