@@ -27,6 +27,8 @@ messagesRouter.get("/public-message", (req, res) => {
 
 messagesRouter.get("/protected-message", checkJwt, (req, res) => {
   console.log(`${req.url} is accessed. token is required`);
+  
+  // --- include the email (https://example.com/email) because i have used custom rule
   console.log(req.user);
   
   if(req.user.permissions.includes('read:protected-message')){
