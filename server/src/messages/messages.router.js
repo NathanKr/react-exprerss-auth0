@@ -27,6 +27,15 @@ messagesRouter.get("/public-message", (req, res) => {
 
 messagesRouter.get("/protected-message", checkJwt, (req, res) => {
   console.log(`${req.url} is accessed. token is required`);
+  console.log(req.user);
+  
+  if(req.user.permissions.includes('read:protected-message')){
+    console.log('user has read:protected-message permission');
+  }
+  else{
+    console.log('user do NOT has read:protected-message permission');
+  }
+
 
   const message = getProtectedMessage();
   res.status(200).send(message);
